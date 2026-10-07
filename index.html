@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante El Muki | Sabor y Tradición en Cerro de Pasco</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* MEJORA VISUAL: Imagen de fondo garantizada mediante enlace directo en línea */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://upload.wikimedia.org/wikipedia/commons/2/23/Cerro_de_Pasco_open_pit_mine.jpg') no-repeat center center / cover !important;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        /* Contenedores de imágenes mejorados para mayor elegancia */
+        .menu-img-container {
+            width: 100%;
+            height: 190px;
+            overflow: hidden;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .menu-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .menu-item:hover .menu-img-container img {
+            transform: scale(1.08);
+        }
+
+        /* Ajustes estéticos generales para un diseño más moderno y limpio */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .menu-item {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .menu-details {
+            padding: 20px;
+        }
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .menu-header h3 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            font-family: 'Playfair Display', serif;
+        }
+        .price {
+            font-weight: 600;
+            color: #d35400;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Superior -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="contact-info">
+                <span><i class="fas fa-phone-alt"></i> +51 900 000 000</span>
+                <span><i class="fas fa-map-marker-alt"></i> Jr. Huáscar 120, Cerro de Pasco</span>
+            </div>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegación Principal -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-utensils"></i> El Muki
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#menu" class="nav-link">Carta</a></li>
+                    <li><a href="#ejecutivo" class="nav-link">Menú Ejecutivo</a></li>
+                    <li><a href="#galeria" class="nav-link">Galería</a></li>
+                    <li><a href="#contacto" class="nav-link">Reservas</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Inicio / Hero con Imagen Optimizada -->
+    <section class="hero" id="inicio">
+        <div class="hero-content container">
+            <h1 style="font-size: 3rem; margin-bottom: 15px; font-family: 'Playfair Display', serif;">El Sabor de la Altura con Tradición Minera</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 25px; font-weight: 300;">Disfruta de la mejor gastronomía peruana y andina en el corazón de Cerro de Pasco.</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary" style="padding: 12px 30px; background: #d35400; color: #fff; border-radius: 5px; text-decoration: none; font-weight: 600; margin-right: 10px;">Ver Carta</a>
+                <a href="#contacto" class="btn btn-secondary" style="padding: 12px 30px; background: transparent; border: 2px solid #fff; color: #fff; border-radius: 5px; text-decoration: none; font-weight: 600;">Reservar Mesa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Nosotros -->
+    <section class="about section" id="nosotros" style="padding: 80px 0;">
+        <div class="container about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+            <div class="about-text">
+                <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 20px; color: #2c3e50;">Nuestra Historia</h2>
+                <p style="margin-bottom: 15px; color: #555; line-height: 1.6;">Inspirados por la leyenda de "El Muki", el duende protector de las minas, nuestro restaurante nace para rendir homenaje a la riqueza de nuestra tierra y la calidez de nuestra gente en Cerro de Pasco.</p>
+                <p style="color: #555; line-height: 1.6;">Combinamos técnicas culinarias ancestrales con ingredientes frescos de la región para ofrecerte una experiencia gastronómica única a más de 4,300 metros de altura.</p>
+            </div>
+            <div class="about-img">
+                <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80" alt="Plato tradicional andino" style="width:100%; height:320px; object-fit:cover; border-radius:10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Menú / Carta Ampliada y Mejorada -->
+    <section class="menu section bg-light" id="menu" style="padding: 80px 0; background: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title text-center" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; color: #2c3e50;">Nuestra Carta Completa</h2>
+            <p class="section-subtitle text-center" style="text-align: center; color: #777; margin-bottom: 40px;">Platos preparados al instante con el toque auténtico de casa</p>
+            
+            <!-- Botones de Filtrado -->
+            <div class="menu-tabs" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px;">
+                <button class="tab-btn active" data-filter="todos" style="padding: 8px 20px; border: none; background: #d35400; color: #white; border-radius: 20px; cursor: pointer; font-weight: 500;">Todos</button>
+                <button class="tab-btn" data-filter="sopas" style="padding: 8px 20px; border: none; background: #e0e0e0; color: #333; border-radius: 20px; cursor: pointer; font-weight: 500;">Sopas y Caldos</button>
+                <button class="tab-btn" data-filter="pato" style="padding: 8px 20px; border: none; background: #e0e0e0; color: #333; border-radius: 20px; cursor: pointer; font-weight: 500;">Platos de Pato</button>
+                <button class="tab-btn" data-filter="principales" style="padding: 8px 20px; border: none; background: #e0e0e0; color: #333; border-radius: 20px; cursor: pointer; font-weight: 500;">Platos Principales</button>
+                <button class="tab-btn" data-filter="bebidas" style="padding: 8px 20px; border: none; background: #e0e0e0; color: #333; border-radius: 20px; cursor: pointer; font-weight: 500;">Bebidas</button>
+                <button class="tab-btn" data-filter="postres" style="padding: 8px 20px; border: none; background: #e0e0e0; color: #333; border-radius: 20px; cursor: pointer; font-weight: 500;">Postres</button>
+            </div>
+
+            <!-- Contenedor de Platillos -->
+            <div class="menu-grid">
+                
+                <!-- PLATOS DE PATO -->
+                <div class="menu-item" data-category="pato">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1514944298352-f4d732112d18?auto=format&fit=crop&w=600&q=80" alt="Arroz con Pato"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Arroz con Pato Estilo El Muki</h3><span class="price">S/ 38.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Tierno pato cocinado a cacerola en crema de culantro, acompañado de arroz alionza y zarza criolla.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="pato">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80" alt="Seco de Pato"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Seco de Pato Norteño con Frijoles</h3><span class="price">S/ 40.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Jugosa presa de pato macerada en chicha de jora y zapallo loche, acompañada de frijoles cremosos.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="pato">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Pato a la Mandarina"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Pato en Salsa de Cítricos y Miel</h3><span class="price">S/ 42.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Magret de pato bañado en una reducción dulce de naranja y kion, acompañado de puré de camote.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="pato">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Chicharrón de Pato"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Chicharrón Crujiente de Pato</h3><span class="price">S/ 39.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Trocitos de pato marinados en especias, fritos en su punto y servidos con yucas doradas.</p>
+                    </div>
+                </div>
+
+                <!-- SOPAS Y CALDOS -->
+                <div class="menu-item" data-category="sopas">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=600&q=80" alt="Caldo de Gallina"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Caldo de Gallina Cordillerano</h3><span class="price">S/ 22.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Caldo concentrado con presa de gallina de corral, fideos zarandaja, huevo y hierba buena.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="sopas">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1578849278619-e73505e9610f?auto=format&fit=crop&w=600&q=80" alt="Patasca"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Patasca Pasqueña Tradicional</h3><span class="price">S/ 24.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Contundente sopa de mote con carnes variadas, ideal para combatir el frío de la altura.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="sopas">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80" alt="Sopa Criolla"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Sopa Criolla con Carne y Leche</h3><span class="price">S/ 23.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Sopa espesa de carne molida con fideos cabello de ángel, ají panca y huevo pochado.</p>
+                    </div>
+                </div>
+
+                <!-- PLATOS PRINCIPALES -->
+                <div class="menu-item" data-category="principales">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Lomo Saltado"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Lomo Saltado Minero</h3><span class="price">S/ 35.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Finos trozos de lomo fino saltados al wok con cebolla, tomate y papas amarillas nativas.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="principales">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1535400255456-984241433b21?auto=format&fit=crop&w=600&q=80" alt="Trucha Frita"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Trucha Frita a la Andina</h3><span class="price">S/ 30.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Trucha fresca de criadero altoandino, acompañada de papas doradas y choclo desgranado.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="principales">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=600&q=80" alt="Seco de Cordero"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Seco de Cordero con Frijoles</h3><span class="price">S/ 36.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Tierno cordero macerado en chicha de jora y culantro, acompañado de frijoles cremosos.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="principales">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80" alt="Ají de Gallina"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Ají de Gallina Tradicional</h3><span class="price">S/ 28.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Cremoso manjar de gallina deshilachada con ají amarillo, leche y queso, servido con papa y huevo.</p>
+                    </div>
+                </div>
+
+                <!-- BEBIDAS -->
+                <div class="menu-item" data-category="bebidas">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="Chicha Morada"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Chicha Morada Artesanal</h3><span class="price">S/ 8.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Preparada con maíz morado peruano, frutas frescas de estación y un toque de limón.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="bebidas">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=600&q=80" alt="Maracuyá"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Jugo de Maracuyá Helado</h3><span class="price">S/ 7.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Refrescante jugo natural con el balance perfecto entre dulce y ácido.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="bebidas">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Limonada"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Limonada Frozen de Hierba Luisa</h3><span class="price">S/ 7.50</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Limonada granizada con un sutil e infundido toque de hierba luisa.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="bebidas">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80" alt="Mate de Coca"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Mate de Coca Andino con Muña</h3><span class="price">S/ 5.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Infusión tradicional ideal para aclimatarse y entrar en calor en la altura.</p>
+                    </div>
+                </div>
+
+                <!-- POSTRES -->
+                <div class="menu-item" data-category="postres">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80" alt="Mazamorra"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Mazamorra Morada con Arroz con Leche</h3><span class="price">S/ 10.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">El clásico "combinado" peruano con frutas secas, canela y clavo de olor.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="postres">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Tres Leches"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Torta Tres Leches de la Casa</h3><span class="price">S/ 12.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Bizcocho húmedo bañado en tres leches y coronado con merengue suave.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="postres">
+                    <div class="menu-img-container"><img src="https://images.unsplash.com/photo-1579372786545-d24232daf58c?auto=format&fit=crop&w=600&q=80" alt="Picarones"></div>
+                    <div class="menu-details">
+                        <div class="menu-header"><h3>Picarones Crujientes con Miel</h3><span class="price">S/ 11.00</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Aros fritos de zapallo y camote, bañados en generosa miel aromática de chancaca.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Menú Ejecutivo -->
+    <section class="executive section" id="ejecutivo" style="padding: 60px 0;">
+        <div class="container executive-card" style="background: linear-gradient(135deg, #2c3e50, #4ca1af); color: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <div class="executive-content">
+                <span class="badge" style="background: #d35400; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">De Lunes a Viernes</span>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin: 15px 0 10px 0;">Menú Ejecutivo del Día</h2>
+                <p style="margin-bottom: 20px; font-size: 1.05rem;">Disfruta de un nutritivo almuerzo que incluye entrada, plato fondo, bebida de la casa y postre tradicional.</p>
+                <ul class="executive-list" style="list-style: none; padding: 0; margin-bottom: 25px;">
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #f1c40f; margin-right: 8px;"></i> Entrada: Sopa criolla o Papa a la huancaína</li>
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #f1c40f; margin-right: 8px;"></i> Segundo: Seco de res, Tallarines rojos o Ají de gallina</li>
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #f1c40f; margin-right: 8px;"></i> Incluye Refresco y Pequeño Postre</li>
+                </ul>
+                <div class="price-tag" style="font-size: 1.5rem; font-weight: bold; color: #f1c40f;">Sólo S/ 16.00</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería -->
+    <section class="gallery section" id="galeria" style="padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title text-center" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; color: #2c3e50; margin-bottom: 40px;">Nuestros Espacios y Platos</h2>
+            <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Interior" style="width:100%; height:220px; object-fit:cover; border-radius:8px;"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Gourmet" style="width:100%; height:220px; object-fit:cover; border-radius:8px;"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Comida" style="width:100%; height:220px; object-fit:cover; border-radius:8px;"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=600&q=80" alt="Ambiente" style="width:100%; height:220px; object-fit:cover; border-radius:8px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto y Reservas -->
+    <section class="contact section bg-light" id="contacto" style="padding: 80px 0; background: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title text-center" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; color: #2c3e50; margin-bottom: 40px;">Reserva tu Mesa</h2>
+            <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div class="contact-info-box" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                    <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 20px; color: #2c3e50;">Información de Contacto</h3>
+                    <p style="margin-bottom: 12px; color: #555;"><i class="fas fa-map-marker-alt" style="color: #d35400; width: 25px;"></i> Jr. Huáscar 120, Cerro de Pasco, Perú</p>
+                    <p style="margin-bottom: 12px; color: #555;"><i class="fas fa-phone-alt" style="color: #d35400; width: 25px;"></i> +51 900 000 000</p>
+                    <p style="margin-bottom: 12px; color: #555;"><i class="fas fa-envelope" style="color: #d35400; width: 25px;"></i> reservas@elmuki.pe</p>
+                    <p style="color: #555;"><i class="fas fa-clock" style="color: #d35400; width: 25px;"></i> Lunes a Domingo: 12:00 m - 9:00 pm</p>
+                </div>
+                <form class="reservation-form" id="reservationForm" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                    <div class="form-group" style="margin-bottom: 15px;"><input type="text" id="nombre" placeholder="Nombre completo" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;"></div>
+                    <div class="form-group" style="margin-bottom: 15px;"><input type="email" id="email" placeholder="Correo electrónico" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;"></div>
+                    <div class="form-group" style="margin-bottom: 15px;"><input type="tel" id="telefono" placeholder="Número de teléfono" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;"></div>
+                    <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px;">
+                        <div class="form-group" style="flex: 1;"><input type="date" id="fecha" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;"></div>
+                        <div class="form-group" style="flex: 1;"><input type="time" id="hora" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;"></div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 20px;"><input type="number" id="personas" min="1" max="20" placeholder="Número de personas" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;"></div>
+                    <button type="submit" class="btn btn-primary btn-block" style="width: 100%; padding: 12px; background: #d35400; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">Confirmar Reserva</button>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="footer" style="background: #1a252f; color: white; text-align: center; padding: 30px 0;">
+        <div class="container footer-content">
+            <p style="margin-bottom: 5px;">&copy; 2026 Restaurante El Muki. Todos los derechos reservados.</p>
+            <p class="designer" style="color: #aaa; font-size: 0.9rem;">Diseñado con orgullo en Cerro de Pasco.</p>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
